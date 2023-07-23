@@ -18,12 +18,15 @@ void bubble_sort(int *array, size_t size)
 		bubbled = 0;
 		while (pos2 < size - pos1 - 1)
 		{
-			tmp_item = array[pos2];
-			array[pos2] = array[pos2 + 1];
-			array[pos2 + 1] = tmp_item;
-			print_array(array, size);
-			pos2++;
-			bubbled = 1;
+			if (array[pos2] > array[pos2 + 1])
+			{
+				tmp_item = array[pos2];
+				array[pos2] = array[pos2 + 1];
+				array[pos2 + 1] = tmp_item;
+				print_array(array, size);
+				pos2++;
+				bubbled = 1;
+			}
 		}
 		if (bubbled == 0)
 			break;
