@@ -11,18 +11,21 @@
 void bubble_sort(int *array, size_t size)
 {
 	size_t pos1;
-	int tmp_item, pos2;
+	int tmp_item, pos2 = 0, bubbled = 0;
 
-	for (pos1 = 0; pos1 < size - 1; pos1++)
+	for (pos1 = 0; pos1 < size; pos1++)
 	{
-		pos2 = pos1 - 1;
-		while (pos2 >= 0 && array[pos2] > array[pos2 + 1])
+		bubbled = 0;
+		while (pos2 < size - pos1 - 1)
 		{
 			tmp_item = array[pos2];
 			array[pos2] = array[pos2 + 1];
 			array[pos2 + 1] = tmp_item;
 			print_array(array, size);
-			pos2--;
+			pos2++;
+			bubbled = 1;
 		}
+		if (bubbled == 0)
+			break;
 	}
 }
