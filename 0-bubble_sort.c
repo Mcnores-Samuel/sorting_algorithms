@@ -9,24 +9,24 @@
  */
 void print_array(const int *array, size_t size)
 {
-    size_t i;
+	size_t i;
 
-    i = 0;
-    while (array && i < size)
-    {
-        if (i > 0)
-            printf(", ");
-        printf("%d", array[i]);
-        ++i;
-    }
-    printf("\n");
+	i = 0;
+	while (array && i < size)
+	{
+		if (i > 0)
+			printf(", ");
+		printf("%d", array[i]);
+		++i;
+	}
+	printf("\n");
 }
 
 /**
  * bubble_sort - repeatedly swaps the adjucent elements of the unsorted
  * array into sorted order.
  * @array: an array of integers to sort.
- * @size; the size of the array or Number of elements in the array.
+ * @size: the size of the array or Number of elements in the array.
  * Return: nothing.
  */
 void bubble_sort(int *array, size_t size)
