@@ -2,27 +2,6 @@
 
 
 /**
- * print_array - Prints an array of integers
- *
- * @array: The array to be printed
- * @size: Number of elements in @array
- */
-void print_array(const int *array, size_t size)
-{
-	size_t i;
-
-	i = 0;
-	while (array && i < size)
-	{
-		if (i > 0)
-			printf(", ");
-		printf("%d", array[i]);
-		++i;
-	}
-	printf("\n");
-}
-
-/**
  * bubble_sort - repeatedly swaps the adjucent elements of the unsorted
  * array into sorted order.
  * @array: an array of integers to sort.
