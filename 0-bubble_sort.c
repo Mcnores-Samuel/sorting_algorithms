@@ -1,5 +1,17 @@
 #include "sort.h"
 
+/**
+ * swaps_values - swaps two values given.
+ * @a: first value to swap
+ * @b: the second value.
+ * Return: nothing.
+ */
+void swaps_values(int *a, int *b)
+{
+	int tmp_item = *a;
+	*a = *b;
+	*b = tmp_item;
+}
 
 /**
  * bubble_sort - repeatedly swaps the adjucent elements of the unsorted
@@ -10,8 +22,8 @@
  */
 void bubble_sort(int *array, size_t size)
 {
-	size_t pos1;
-	int tmp_item, pos2 = 0, bubbled = 0;
+	size_t pos1, pos2 = 0;
+	int bubbled = 0;
 
 	for (pos1 = 0; pos1 < size; pos1++)
 	{
@@ -20,14 +32,13 @@ void bubble_sort(int *array, size_t size)
 		{
 			if (array[pos2] > array[pos2 + 1])
 			{
-				tmp_item = array[pos2];
-				array[pos2] = array[pos2 + 1];
-				array[pos2 + 1] = tmp_item;
+				swaps_values(&array[pos2], &array[pos2 + 1]);
 				print_array(array, size);
-				pos2++;
 				bubbled = 1;
 			}
+			pos2++;
 		}
+		pos2 = 0;
 		if (bubbled == 0)
 			break;
 	}
