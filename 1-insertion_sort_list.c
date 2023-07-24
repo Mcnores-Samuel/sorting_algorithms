@@ -25,7 +25,12 @@ void insertion_sort_list(listint_t **list)
 				c->next = b;
 				b->prev = c;
 			}
-
+			else
+			{
+				a = current;
+				current->next = tmp;
+				*list = a;
+			}
 			if (d != NULL)
 			{
 				b->next = d;
