@@ -25,10 +25,7 @@ void swaps_values(int *a, int *b)
  */
 int quick_partion_set(int *array, int size,  int low_b, int upper_b)
 {
-
-	int pivot = upper_b;
-	int start = low_b;
-	int start_next = low_b;
+	int pivot = upper_b, start = low_b, start_next = low_b;
 
 	while (start_next < upper_b)
 	{
@@ -48,7 +45,6 @@ int quick_partion_set(int *array, int size,  int low_b, int upper_b)
 		swaps_values(&array[start], &array[pivot]);
 		print_array(array, size);
 	}
-
 	return (start);
 }
 
