@@ -53,8 +53,8 @@ int quick_partion_set(int *array, int size,  int low_b, int upper_b)
  * sorted.
  * @array: array to sort
  * @size: size of the array.
- * @low_b: elements in the left side of the pivot.
- * @upper_b: elements in the right side of the pivot element.
+ * @low: elements in the left side of the pivot.
+ * @upper: elements in the right side of the pivot element.
  * Return: Number representing the upper bound position of the previous
  * sort.
  */
