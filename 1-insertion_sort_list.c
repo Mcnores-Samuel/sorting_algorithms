@@ -7,7 +7,8 @@
  * @second_node: pointer to the second node to swap.
  * Return: void.
  */
-void swap_list(listint_t **list, listint_t **first_node, listint_t *second_node)
+void swap_list(listint_t **list, listint_t **first_node,
+		listint_t *second_node)
 {
 	(*first_node)->next = second_node->next;
 	if (second_node->next != NULL)
