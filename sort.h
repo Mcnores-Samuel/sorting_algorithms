@@ -30,5 +30,6 @@ void quick_sort_set1(int *array, int size, int low, int upper);
 void swaps_values(int *a, int *b);
 
 void insertion_sort_list(listint_t **list);
+void shell_sort(int *array, size_t size);
 
 #endif
