@@ -11,33 +11,28 @@ void shell_sort(int *array, size_t size)
 {
 	int interval = 0, out_pos, in_pos, tmp;
 
-	if (array == NULL)
+	if (size < 2)
 		return;
-	if (size >= 2)
-	{
-		while (interval < (int)size / 3)
-			interval = interval * 3 + 1;
+	while (interval < (int)size / 3)
+		interval = interval * 3 + 1;
 
-		while (interval > 0)
+	while (interval > 0)
+	{
+		out_pos = interval;
+		while (out_pos < (int)size)
 		{
-			out_pos = interval;
-			while (out_pos < (int)size)
+			tmp = array[out_pos];
+			in_pos = out_pos;
+			while (in_pos > interval - 1 &&
+					array[in_pos - interval] >= tmp)
 			{
-				tmp = array[out_pos];
-				in_pos = out_pos;
-				while (in_pos > interval - 1 &&
-						array[in_pos - interval] >= tmp)
-				{
-					array[in_pos] = array[in_pos - interval];
-					in_pos = in_pos - interval;
-				}
-				array[in_pos] = tmp;
-				out_pos++;
+				array[in_pos] = array[in_pos - interval];
+				in_pos = in_pos - interval;
 			}
-			print_array(array, size);
-			interval = (interval - 1) / 3;
+			array[in_pos] = tmp;
+			out_pos++;
 		}
-	}
-	else
 		print_array(array, size);
+		interval = (interval - 1) / 3;
+	}
 }
